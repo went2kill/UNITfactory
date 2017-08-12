@@ -55,7 +55,7 @@ int app_flags_ss(int size,char *strn, t_print* ls)
     }
     if (fl[2] == '1' && fl[0] != '1'){
         size1 = 0;
-        if (ls->prec_fl < ls->width)
+        if (ls->precision < ls->width)
             while (strn[size1] == ' ')
                 strn[size1++] = '0';
     }
@@ -71,11 +71,9 @@ int apply_w_p_ss(t_print *lst, char *st)
     
     size_m = 0;
     size_n = (int)ft_strlen(st);
-    if (lst->precision < size_n && lst->prec_fl == 1)
-    {
+    if (lst->precision < size_n && lst->prec_fl == 1) {
         str = ft_strnew((size_t)lst->precision);
-        while (size_m < lst->precision)
-        {
+        while (size_m < lst->precision) {
             str[size_m] = st[size_m];
             size_m++;
         }

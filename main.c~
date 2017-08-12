@@ -11,6 +11,6 @@ int main() {
     printf("\n%jx", -4294967296);
     printf("\n%s", ft_itoa(-4294967296));
     printf("\n%D", -4294967296);
-    ft_printf("\n->%-5.3s<-", "LYDI");
+
   return (0);
 }
