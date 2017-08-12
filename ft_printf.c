@@ -40,7 +40,7 @@ int print_param(t_print *list, va_list ptr)
     if (list->convers == 'c' || list->convers == 'C')
         return next_step_for_cc(list, ptr);
     if (list->convers == 's' || list->convers == 'S')
-        return next_step_for_ss(list, ptr);
+        return 0;//next_step_for_ss(list, ptr);
     if (list->convers == 'o' || list->convers == 'O')
         return next_step_for_oo(list, ptr);
     if (list->convers == 'x' || list->convers == 'X')
