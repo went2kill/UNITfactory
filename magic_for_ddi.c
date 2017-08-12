@@ -100,9 +100,9 @@ int next_step_for_ddi(t_print *list, va_list ptr)
     else if (((list->convers == 'd' || list->convers == 'i') && list->size == 2 ) || list->convers == 'D')
         str = ft_itoa(va_arg(ptr, long int));
     else if ((list->convers == 'd' || list->convers == 'i') && list->size == 3)
-        str = ft_itoa(va_arg(ptr, short int));
+        str = ft_itoa((short int)va_arg(ptr, int));
     else if ((list->convers == 'd' || list->convers == 'i') && list->size == 4)
-        str = ft_itoa(va_arg(ptr, char));
+        str = ft_itoa((char)va_arg(ptr, int));
     else if ((list->convers == 'd' || list->convers == 'i') && list->size == 5)
         str = ft_itoa(va_arg(ptr, intmax_t));
     else if ((list->convers == 'd' || list->convers == 'i') && list->size == 6)

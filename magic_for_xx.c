@@ -94,11 +94,11 @@ int next_step_for_X(t_print *list, va_list ptr)
     if (c == 'X' && list->size == 1)
         str = ft_itoa_base(va_arg(ptr, unsigned long long int), 16, 1);
     else if (c == 'X' && list->size == 2)
-        str = ft_itoa_base(va_arg(ptr, unsigned long int), 16, 1);
+        str = ft_itoa_base((unsigned short int)va_arg(ptr, unsigned int), 16, 1);
     else if (c == 'X' && list->size == 3)
-        str = ft_itoa_base(va_arg(ptr, unsigned short int), 16, 1);
+        str = ft_itoa_base((unsigned short int)va_arg(ptr, unsigned int), 16, 1);
     else if (c == 'X' && list->size == 4)
-        str = ft_itoa_base(va_arg(ptr, unsigned char), 16, 1);
+        str = ft_itoa_base((unsigned char)va_arg(ptr, unsigned int), 16, 1);
     else if (c == 'X' && list->size == 5)
         str = ft_itoa_base(va_arg(ptr, uintmax_t), 16, 1);
     else if (c == 'X' && list->size == 6)
@@ -122,9 +122,9 @@ int next_step_for_xx(t_print *list, va_list ptr)
         else if (c == 'x' && list->size == 2)
             str = ft_itoa_base(va_arg(ptr, unsigned long int), 16, 0);
         else if (c == 'x' && list->size == 3)
-            str = ft_itoa_base( va_arg(ptr, unsigned short int), 16, 0);
+            str = ft_itoa_base((unsigned short int)va_arg(ptr, unsigned int), 16, 0);
         else if (c == 'x' && list->size == 4)
-            str = ft_itoa_base( va_arg(ptr, unsigned char), 16, 0);
+            str = ft_itoa_base((unsigned char)va_arg(ptr, unsigned int), 16, 0);
         else if (c == 'x' && list->size == 5)
             str = ft_itoa_base(va_arg(ptr, uintmax_t), 16, 0);
         else if (c == 'x' && list->size == 6)

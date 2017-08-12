@@ -86,9 +86,9 @@ int next_step_for_oo(t_print *list, va_list ptr)
     else if ((c == 'o'  && list->size == 2) || c == 'O')
         str = ft_itoa_base(va_arg(ptr, unsigned long int), 8, 0);
     else if (c == 'o' && list->size == 3)
-        str = ft_itoa_base(va_arg(ptr, unsigned short int), 8, 0);
+        str = ft_itoa_base((unsigned short int)va_arg(ptr, unsigned int), 8, 0);
     else if (c == 'o' && list->size == 4)
-        str = ft_itoa_base(va_arg(ptr, unsigned char), 8, 0);
+        str = ft_itoa_base((unsigned char)va_arg(ptr, unsigned int), 8, 0);
     else if (c == 'o' && list->size == 5)
         str = ft_itoa_base(va_arg(ptr, uintmax_t), 8, 0);
     else if (c == 'o' && list->size == 6)
