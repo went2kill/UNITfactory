@@ -56,7 +56,7 @@ int app_flags_ss(int size,char *strn, t_print* ls)
     if (fl[2] == '1' && fl[0] != '1'){
         size1 = 0;
         if (ls->prec_fl < ls->width)
-            while (size1 < size)
+            while (strn[size1] == ' ')
                 strn[size1++] = '0';
     }
     ft_putstr(strn);
