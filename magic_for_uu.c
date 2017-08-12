@@ -62,9 +62,9 @@ int next_step_for_uu(t_print *list, va_list ptr)
     else if ((c == 'u'  && list->size == 2) || c == 'U')
         str = ft_itoa(va_arg(ptr, unsigned long int));
     else if (c == 'u' && list->size == 3)
-        str = ft_itoa((unsigned short int)va_arg(ptr, unsigned int));
+        str = ft_itoa(va_arg(ptr, unsigned short int));
     else if (c == 'u' && list->size == 4)
-        str = ft_itoa((unsigned char)va_arg(ptr, unsigned int));
+        str = ft_itoa(va_arg(ptr, unsigned char));
     else if (c == 'u' && list->size == 5)
         str = ft_itoa(va_arg(ptr, uintmax_t));
     else if (c == 'u' && list->size == 6)

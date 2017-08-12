@@ -12,29 +12,30 @@
 
 #include "libft.h"
 
-char	*ft_itoa(intmax_t n)
+char	*ft_itoa(intmax_t value)
 {
-    intmax_t	num;
-    char	*str;
-    int		i;
+    int			i;
+    intmax_t	n;
+    char		*s;
+    char        *h;
     
-    num = n;
-    i = 0;
-    if (n < 0)
-        i = 1;
-    while ((n > 9 || n < -9) && ++i)
-        n /= 10;
-    if (!(str = ft_strnew(i + 1)))
+    h = "0123456789";
+    i = (value < 0) ? 2 : 1;
+    n = value;
+    while (n /= 10)
+        i++;
+    if ((s = (char*)malloc(sizeof(char) * i + 1)) == 0)
         return (NULL);
-    if (num < 0)
+    s[i] = 0;
+    if (value < 0)
+        s[0] = '-';
+    if (value == 0)
+        s[0] = '0';
+    n = value;
+    while (n)
     {
-        str[0] = '-';
-        num = -num;
+        s[--i] = h[(n < 0) ? -(n % 10) : n % 10];
+        n /= 10;
     }
-    while (str[i] != '-' && i >= 0)
-    {
-        str[i--] = (char) ('0' + num % 10);
-        num /= 10;
-    }
-    return (str);
+    return (s);
 }
