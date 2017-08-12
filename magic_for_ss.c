@@ -55,7 +55,7 @@ int app_flags_ss(int size,char *strn, t_print* ls)
     }
     if (fl[2] == '1' && fl[0] != '1'){
         size1 = 0;
-        if (ls->prec_fl == 0)
+        if (ls->prec_fl < ls->width)
             while (size1 < size)
                 strn[size1++] = '0';
     }
@@ -94,7 +94,6 @@ int next_step_for_ss(t_print *list, va_list ptr)
     char    *str;
     
     if ((list->size == 's' && list->size == 2) || list->size == 'S'){
-      return 0;
         str1 = va_arg(ptr, wchar_t*);
         str = make_norm_str(str1);
     }
