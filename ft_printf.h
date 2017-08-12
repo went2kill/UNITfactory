@@ -37,7 +37,7 @@ char *newstr(int n, char s);
 t_print    *new_struc();
 t_print_list    *new_struc_list();
 char	*up_or(int up);
-char	*ft_itoa_base(long long value, int base, int up);
+char	*ft_itoa_base(uintmax_t value, int base, int up);
 int print_some(char **str);
 void pass_some(char **str);
 char     is_convers(char c, char *str);

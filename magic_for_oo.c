@@ -20,7 +20,7 @@ int app_flags_oo(int size,char *strn, t_print* ls)
     
     fl = ls->flags;
     size1 = (int)ft_strlen(strn);
-    if (fl[3] == '1' && ls->prec_fl == 1 && ls->precision == 0){
+    if (fl[3] == '1' && ((ls->prec_fl == 1 && ls->precision == 0) || ls->prec_fl == 0)){
         if ((size < ls->width || size < ls->precision)){
             size2 = 0;
             while (!ft_isdigit(strn[size2]))
@@ -58,6 +58,16 @@ int apply_w_p_oo(t_print *lst, char *strnum)
     size_n = (int)ft_strlen(str);
     if (lst->width > size_n)
         str = ft_strjoin(newstr(lst->width - size_n, ' '), str);
+    if (ft_atoi(strnum) == 0 && lst->prec_fl == 1 && lst->precision == 0)
+    {
+        str[ft_strlen(str) - 1] = ' ';
+        if (lst->flags[3] == '1')
+            str[ft_strlen(str) - 1] = '0';
+        else if (lst->width == 0)
+            str[ft_strlen(str) - 1] = '\0';
+        ft_putstr(str);
+        return (int)ft_strlen(str);
+    }
     /*if (lst->prec_fl == 1 && lst->precision == 0 && ft_atoi(strnum) == 0)
         if (lst->flags[0] != '1' && lst->flags[1] != '1' && lst->flags[2] != '1')
             if (lst->flags[3] != '1' && lst->flags[4] != '1' && lst->flags[5] != '1')

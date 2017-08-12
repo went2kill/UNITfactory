@@ -61,13 +61,13 @@ int apply_w_p_ddi(t_print *lst, char *strnum, char lb)
     int size_n;
     char *str;
 
-    if (lst->prec_fl == 1 && lst->precision == 0 && *strnum == '0')
-      return 0;
     size_n = (int)ft_strlen(strnum);
+    if (lb == '-')
+        size_n--;
     if (lst->precision > size_n) {
         if (lb == '-'){
             strnum++;
-            str = ft_strjoin(newstr(lst->precision - size_n + 2, '0'), strnum);
+            str = ft_strjoin(newstr(lst->precision - size_n + 1, '0'), strnum);
             str[0] = '-';
         }
         else
@@ -78,6 +78,14 @@ int apply_w_p_ddi(t_print *lst, char *strnum, char lb)
     size_n = (int)ft_strlen(str);
     if (lst->width > size_n)
         str = ft_strjoin(newstr(lst->width - size_n, ' '), str);
+    if (ft_atoi(strnum) == 0 && lst->prec_fl == 1 && lst->precision == 0)
+    {
+        str[ft_strlen(str) - 1] = ' ';
+        if (lst->width == 0)
+            str[ft_strlen(str) - 1] = '\0';
+        ft_putstr(str);
+        return (int)ft_strlen(str);
+    }
     return app_flags_ddi(size_n, str, lb, lst);
 }
 

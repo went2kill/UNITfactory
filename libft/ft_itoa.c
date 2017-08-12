@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_itoa(intmax_t n)
 {
-    long	num;
+    intmax_t	num;
     char	*str;
     int		i;
     
@@ -33,7 +33,7 @@ char	*ft_itoa(int n)
     }
     while (str[i] != '-' && i >= 0)
     {
-        str[i--] = '0' + num % 10;
+        str[i--] = (char) ('0' + num % 10);
         num /= 10;
     }
     return (str);

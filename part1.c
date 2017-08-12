@@ -47,10 +47,10 @@ char	*up_or(int up)
     return (hex);
 }
 
-char	*ft_itoa_base(long long value, int base, int up)
+char	*ft_itoa_base(uintmax_t value, int base, int up)
 {
     int			i;
-    long long	n;
+    uintmax_t	n;
     char		*s;
     char		*hex;
     
@@ -69,7 +69,7 @@ char	*ft_itoa_base(long long value, int base, int up)
     n = value;
     while (n)
     {
-        s[--i] = hex[(n < 0) ? -(n % base) : n % base];
+        s[--i] = hex[(n < 0) ? (uintmax_t) -(n % base) : n % base];
         n /= base;
     }
     return (s);
