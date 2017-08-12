@@ -92,8 +92,8 @@ int next_step_for_ss(t_print *list, va_list ptr)
     char    *str;
     
     if ((list->size == 's' && list->size == 2) || list->size == 'S'){
-        return 0;
         str1 = va_arg(ptr, wchar_t*);
+        return 0;
         str = make_norm_str(str1);
     }
     else
