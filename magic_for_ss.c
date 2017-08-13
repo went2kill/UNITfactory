@@ -91,12 +91,18 @@ int next_step_for_ss(t_print *list, va_list ptr)
     wchar_t *str1;
     char    *str;
     
+    str = 0;
+    str1 = 0;
     if ((list->size == 's' && list->size == 2) || list->size == 'S'){
         str1 = va_arg(ptr, wchar_t*);
         str = make_norm_str(str1);
     }
     else
         str = va_arg(ptr, char*);
-    return 0;
+    if (str == 0)
+    {
+        ft_putstr("(null)");
+        return 6;
+    }
     return apply_w_p_ss(list, str);
 }
