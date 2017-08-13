@@ -41,7 +41,7 @@ int next_step_for_p(t_print *list, va_list ptr)
     str = ft_itoa_base(va_arg(ptr, unsigned long int), 16, 0);
     if (list->precision == 0 && list->prec_fl == 1 && *str == '0' && *(str + 1) == '\0'){
       ft_putstr("0x");
-      return 0;
+      return 2;
     }
     size_n = (int)ft_strlen(str);
     if (list->precision > size_n)
@@ -54,8 +54,10 @@ int next_step_for_p(t_print *list, va_list ptr)
         while (!ft_isdigit(str[size2]))
             size2++;
         str[--size2] = 'x';
-        str[--size2] = '0';
-    }
+        if (size2 == 0)
+            str = ft_strjoin("0", str);
+        else
+            str[--size2] = '0';    }
     else
         str = ft_strjoin("0x", str);
     size_n += 2;

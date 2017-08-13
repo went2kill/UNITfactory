@@ -94,7 +94,7 @@ int next_step_for_X(t_print *list, va_list ptr)
     if (c == 'X' && list->size == 1)
         str = ft_itoa_base(va_arg(ptr, unsigned long long int), 16, 1);
     else if (c == 'X' && list->size == 2)
-        str = ft_itoa_base((unsigned short int)va_arg(ptr, unsigned int), 16, 1);
+        str = ft_itoa_base(va_arg(ptr, unsigned long int), 16, 1);
     else if (c == 'X' && list->size == 3)
         str = ft_itoa_base((unsigned short int)va_arg(ptr, unsigned int), 16, 1);
     else if (c == 'X' && list->size == 4)
