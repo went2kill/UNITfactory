@@ -99,11 +99,14 @@ int next_step_for_ss(t_print *list, va_list ptr)
     }
     else
         str = va_arg(ptr, char*);
-    return 0;
     if (str == 0)
     {
-        ft_putstr("(null)");
-        return 6;
+        if (list->prec_fl == 0)
+        {
+            ft_putstr("(null)");
+            return 6;
+        }
+        str = "(null)";
     }
     return apply_w_p_ss(list, str);
 }
