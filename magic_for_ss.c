@@ -48,7 +48,7 @@ int app_flags_ss(int size,char *strn, t_print* ls)
     char *fl;
     
     fl = ls->flags;
-    size1 = (int)ft_strlen(strn);
+    size1 = 2;//(int)ft_strlen(strn);
     if (fl[0] == '1') {
         if (size < size1)
             strn = ft_strjoin(&strn[size1 - size], newstr(size1 - size, ' '));
