@@ -97,6 +97,7 @@ t_print *do_parse(char **str)
     ret_lst->precision = parse_precision(st, &ret_lst);
     ret_lst->size = parse_size(st);
     ret_lst->convers = parse_convers(st);
+    ret_lst->star = parse_star(st);
     while (is_convers(**str, "sSpdDioOuUxXcC") == 0)
         (*str)++;
     (*str)++;

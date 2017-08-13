@@ -27,6 +27,7 @@ typedef struct s_print {
     int     size;
     char    convers;
     int     prec_fl;
+    int     star;
 }           t_print;
 
 typedef struct s_print_list{
@@ -39,6 +40,7 @@ t_print_list    *new_struc_list();
 char	*up_or(int up);
 char	*ft_itoa_base(uintmax_t value, int base, int up);
 char	*ft_uitoa(uintmax_t value);
+int     parse_star(char *str);
 int print_some(char **str);
 void pass_some(char **str);
 char     is_convers(char c, char *str);
