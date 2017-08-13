@@ -110,5 +110,6 @@ int next_step_for_ss(t_print *list, va_list ptr)
         }
         str = "(null)";
     }
+    return 0;
     return apply_w_p_ss(list, str);
 }
