@@ -96,10 +96,10 @@ int next_step_for_ss(t_print *list, va_list ptr)
     if ((list->size == 's' && list->size == 2) || list->size == 'S'){
         str1 = va_arg(ptr, wchar_t*);
         str = make_norm_str(str1);
-        return 0;
     }
     else
         str = va_arg(ptr, char*);
+    return 0;
     if (str == 0)
     {
         ft_putstr("(null)");
