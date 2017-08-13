@@ -47,6 +47,6 @@ clean:
 	$(DEL) libft/*.o
 fclean: clean
 	$(DEL) $(NAME)
-re:
-	$(DEL) $(NAME)
-	make $(NAME)
+	$(DEL) libft/libft.a
+re:	fclean
+	make
