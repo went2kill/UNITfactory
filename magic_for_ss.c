@@ -70,7 +70,8 @@ int apply_w_p_ss(t_print *lst, char *st)
     int size_m;
     
     size_m = 0;
-    size_n = (int)ft_strlen(st);
+    size_n = 2;
+    //size_n = (int)ft_strlen(st);
     if (lst->precision < size_n && lst->prec_fl == 1) {
         str = ft_strnew((size_t)lst->precision);
         while (size_m < lst->precision) {
@@ -80,7 +81,7 @@ int apply_w_p_ss(t_print *lst, char *st)
     }
     else
         str = st;
-    size_n = (int)ft_strlen(str);
+    //size_n = (int)ft_strlen(str);
     if (lst->width > size_n)
         str = ft_strjoin(newstr(lst->width - size_n, ' '), str);
     return app_flags_ss(size_n, str, lst);
