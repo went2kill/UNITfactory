@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:39:34 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/08 18:39:59 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/13 16:28:55 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int     ft_printf(char *tmp_format, ...)
     va_start(arg_ptr, tmp_format);
     start_struc = parse_this(&tmp_format);
     if (start_struc->lst->star == 666)
-        return 0;
+        return 0;
     while (start_struc)
     {
         ret_sum += print_some(&ptr);
