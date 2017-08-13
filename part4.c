@@ -17,7 +17,7 @@ int     parse_star(char *str)
   while (!is_convers(*str, "sSpdDioOuUxXcC"))
     {
       if (*str == '*')
-	exit(0);
+	return 666;
       str++;
     }
   return 0;

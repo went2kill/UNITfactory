@@ -62,6 +62,8 @@ int     ft_printf(char *tmp_format, ...)
     pass_some(&tmp_format);
     va_start(arg_ptr, tmp_format);
     start_struc = parse_this(&tmp_format);
+    if (start_struc->lst->star == 666)
+        return 0;
     while (start_struc)
     {
         ret_sum += print_some(&ptr);
