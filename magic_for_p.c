@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:49:35 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/14 16:30:00 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/14 16:33:06 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,21 @@ int			next_step_for_p(t_print *list, va_list ptr)
     next_step_for_p2(list, ptr, size_n, size2);
 }
 
-int			next_step_for_p2(t_print *list, va_list ptr, char *str, int snn, int s2)
+int			next_step_for_p2(t_print *list, va_list ptr, char *str, int sn, int s2)
 {
-    if (size_n < list->width || size_n < list->precision)
+    if (sn < list->width || sn < list->precision)
     {
-        size2 = 0;
-        while (!ft_isdigit(str[size2]))
-            size2++;
-        str[--size2] = 'x';
-        if (size2 == 0)
+        s = 0;
+        while (!ft_isdigit(str[s2]))
+            s2++;
+        str[--s2] = 'x';
+        if (s2 == 0)
             str = ft_strjoin("0", str);
-        else
-            str[--size2] = '0';
+else
+            str[--s2] = '0';
     }
     else
         str = ft_strjoin("0x", str);
-    size_n += 2;
-    return (app_flags_p(size_n, str, list));
+    sn += 2;
+    return (app_flags_p(sn, str, list));
 }
