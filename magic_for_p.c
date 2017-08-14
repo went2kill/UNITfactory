@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:49:35 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/14 16:37:28 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/14 16:41:20 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int			next_step_for_p(t_print *list, va_list ptr)
 	int		size2;
 
 	str = ft_itoa_base(va_arg(ptr, unsigned long int), 16, 0);
-	if (list->precision == 0 && list->prec_fl == 1 && *str == '0' && *(str + 1) == '\0')
+	if (list->precision == 0 && list->prec_fl == 1 && *str == '0' &&
+			*(str + 1) == '\0')
 	{
 		ft_putstr("0x");
 		return (2);
@@ -52,24 +53,26 @@ int			next_step_for_p(t_print *list, va_list ptr)
 	size_n = (int)ft_strlen(str);
 	if (list->width > size_n)
 		str = ft_strjoin(newstr(list->width - size_n, ' '), str);
-    next_step_for_p2(list, ptr, str, size_n, size2);
+	next_step_for_p2(list, ptr, str, size_n);
 }
 
-int			next_step_for_p2(t_print *list, va_list ptr, char *str, int sn, int s2)
+int			next_step_for_p2(t_print *list, va_list ptr, char *str, int sn)
 {
-    if (sn < list->width || sn < list->precision)
-    {
-        s2 = 0;
-        while (!ft_isdigit(str[s2]))
-            s2++;
-        str[--s2] = 'x';
-        if (s2 == 0)
-            str = ft_strjoin("0", str);
-else
-            str[--s2] = '0';
-    }
-    else
-        str = ft_strjoin("0x", str);
-    sn += 2;
-    return (app_flags_p(sn, str, list));
+	int		s2;
+
+	s2 = 0;
+	if (sn < list->width || sn < list->precision)
+	{
+		while (!ft_isdigit(str[s2]))
+			s2++;
+		str[--s2] = 'x';
+		if (s2 == 0)
+			str = ft_strjoin("0", str);
+		else
+			str[--s2] = '0';
+	}
+	else
+		str = ft_strjoin("0x", str);
+	sn += 2;
+	return (app_flags_p(sn, str, list));
 }

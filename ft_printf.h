@@ -56,6 +56,7 @@ t_print					*do_parse(char **str);
 t_print_list			*parse_this(char **str);
 int						app_flags_ddi(int size, char *strn, char l,
 		t_print *ls);
+int app_flags_ddi2(int size,char *strn, char l, t_print* ls, int size1);
 int						apply_w_p_ddi(t_print *lst, char *strnum, char lb);
 int						next_step_for_ddi(t_print *list, va_list ptr);
 int						app_flags_uu(int size, char *strn, t_print *ls);
