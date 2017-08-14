@@ -82,7 +82,7 @@ int						next_step_for_xx(t_print *list, va_list ptr);
 int						app_flags_p(int size, char *strn, t_print *ls);
 int						next_step_for_p(t_print *list, va_list ptr);
 int						next_step_for_p2(t_print *list, va_list ptr,
-		char *str, int sn, int s2);
+		char *str, int sn);
 int						print_param(t_print *list, va_list ptr);
 int						ft_printf(char *tmp_format, ...);
 

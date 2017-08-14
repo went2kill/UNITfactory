@@ -35,6 +35,14 @@ int app_flags_ddi(int size,char *strn, char l, t_print* ls)
             strn = ft_strjoin(" ", strn);
         size++;
     }
+    return (app_flags_ddi2(size, strn, l, ls, size1));
+}
+
+int app_flags_ddi2(int size,char *strn, char l, t_print* ls, int size1)
+{
+    char *fl;
+    
+    fl = ls->flags;
     if (fl[0] == '1') {
         if (size < size1)
             strn = ft_strjoin(&strn[size1 - size], newstr(size1 - size, ' '));
