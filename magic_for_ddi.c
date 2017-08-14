@@ -86,7 +86,7 @@ int			apply_w_p_ddi(t_print *lst, char *strnum, char lb)
 	}
 	else
 		str = strnum;
-	return (app_w_p_ddi2(lst, strnum, lb, str));
+	return (appy_w_p_ddi2(lst, strnum, lb, str));
 }
 
 int			apply_w_p_ddi2(t_print *lst, char *strnum, char lb, char *str)
