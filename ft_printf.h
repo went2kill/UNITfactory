@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:41:24 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/14 18:54:52 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/14 19:05:18 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,14 @@ int						app_flags_oo2(int size, char *strn, t_print *ls,
 		int size1);
 int						apply_w_p_oo(t_print *lst, char *strnum);
 int						next_step_for_oo(t_print *list, va_list ptr);
-int						app_flags_xx(int size, char *strn, t_print *ls);
+int						app_flags_xx(int size, char *strn, t_print *ls,
+		int size2);
 int						app_flags_xx2(int size, char *strn, t_print *ls,
 		int size1);
 int						apply_w_p_xx(t_print *lst, char *strnum);
 int						next_step_for_x(t_print *list, va_list ptr);
 int						next_step_for_xx(t_print *list, va_list ptr);
-int						app_flags_p(int size, char *strn, t_print *ls,
-		int size2);
+int						app_flags_p(int size, char *strn, t_print *ls);
 int						next_step_for_p(t_print *list, va_list ptr);
 int						next_step_for_p2(t_print *list, va_list ptr,
 		char *str, int sn);
