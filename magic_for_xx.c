@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:48:53 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/08 18:48:57 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/14 18:26:56 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int app_flags_xx(int size,char *strn, t_print* ls)
     fl = ls->flags;
     size1 = (int)ft_strlen(strn);
     if (fl[3] == '1' && ((fl[2] != '1') || (fl[2] == '1' && fl[0] == '1'))){
-        if ((size < ls->width || size < ls->precision)){
+        if ((size < ls->width || size < ls->precision))
+		{
             size2 = 0;
             while (!ft_isdigit(strn[size2]))
                 size2++;
@@ -40,6 +41,11 @@ int app_flags_xx(int size,char *strn, t_print* ls)
                 strn = ft_strjoin("0X", strn);
         }
     }
+	return (app_flags_xx2(size, strn, ls, size1));
+}
+
+int app_flags_xx2(int size, char *strn, t_print *ls, int size1)
+{
     if (fl[0] == '1') {
         if (size < size1)
             strn = ft_strjoin(&strn[size1 - size], newstr(size1 - size, ' '));
@@ -85,7 +91,7 @@ int apply_w_p_xx(t_print *lst, char *strnum)
     return app_flags_xx(size_n, str, lst);
 }
 
-int next_step_for_X(t_print *list, va_list ptr)
+int next_step_for_x(t_print *list, va_list ptr)
 {
     char *str;
     char c;
@@ -115,7 +121,7 @@ int next_step_for_xx(t_print *list, va_list ptr)
     
     c = list->convers;
     if (c == 'X')
-        return next_step_for_X(list, ptr);
+        return next_step_for_x(list, ptr);
     else {
         if (c == 'x' && list->size == 1)
             str = ft_itoa_base(va_arg(ptr, unsigned long long int), 16, 0);
