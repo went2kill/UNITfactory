@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:43:22 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/14 17:23:16 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/14 17:26:36 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int			app_flags_ddi(int size, char *strn, char l, t_print *ls)
 	size1 = (int)ft_strlen(strn);
 	if (ls->flags[1] == '1' && l == '+')
 	{
-		if ((int)ft_slrlen(strn) > size)
+		if (size1 > size)
 			strn[size1 - size - 1] = '+';
 		else
 			strn = ft_strjoin("+", strn);
@@ -27,7 +27,7 @@ int			app_flags_ddi(int size, char *strn, char l, t_print *ls)
 	}
 	if (ls->flags[4] == '1' && ls->flags[1] != '1' && l != '-')
 	{
-		if ((int)ft_strlen(strn) > size)
+		if (size1 > size)
 			strn[size1 - size - 1] = ' ';
 		else
 			strn = ft_strjoin(" ", strn);
