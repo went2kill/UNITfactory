@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:48:53 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/14 18:26:56 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/14 18:31:14 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ int app_flags_xx(int size,char *strn, t_print* ls)
 
 int app_flags_xx2(int size, char *strn, t_print *ls, int size1)
 {
+	char *fl;
+
+	fl = ls->flags;
     if (fl[0] == '1') {
         if (size < size1)
             strn = ft_strjoin(&strn[size1 - size], newstr(size1 - size, ' '));
