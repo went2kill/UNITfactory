@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:43:22 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/14 17:19:06 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/14 17:23:16 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int			app_flags_ddi(int size, char *strn, char l, t_print *ls)
 {
+	int		size1;
+
+	size1 = (int)ft_strlen(strn);
 	if (ls->flags[1] == '1' && l == '+')
 	{
 		if ((int)ft_slrlen(strn) > size)
