@@ -74,6 +74,7 @@ int						app_flags_ss(int size, char *strn, t_print *ls);
 int						apply_w_p_ss(t_print *lst, char *st);
 int						next_step_for_ss(t_print *list, va_list ptr);
 int						app_flags_oo(int size, char *strn, t_print *ls);
+int			app_flags_oo2(int size, char *strn, t_print *ls, int size1);
 int						apply_w_p_oo(t_print *lst, char *strnum);
 int						next_step_for_oo(t_print *list, va_list ptr);
 int						app_flags_xx(int size, char *strn, t_print *ls);
