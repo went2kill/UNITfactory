@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:43:22 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/14 17:16:21 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/14 17:19:06 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int			apply_w_p_ddi(t_print *lst, char *strnum, char lb)
 	}
 	else
 		str = strnum;
-	app_flags_ddi2(lst, strnum, lb, str);
+	app_w_p_ddi2(lst, strnum, lb, str);
 }
 
 int			apply_w_p_ddi2(t_print *lst, char *strnum, char lb, char *str)

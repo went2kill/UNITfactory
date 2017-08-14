@@ -58,7 +58,7 @@ int						app_flags_ddi(int size, char *strn, char l,
 		t_print *ls);
 int app_flags_ddi2(int size,char *strn, char l, t_print* ls, int size1);
 int						apply_w_p_ddi(t_print *lst, char *strnum, char lb);
-int apply_w_p_ddi2(t_print *lst, char *strnum, char lb, char *str);
+int			apply_w_p_ddi2(t_print *lst, char *strnum, char lb, char *str);
 int						next_step_for_ddi(t_print *list, va_list ptr);
 int						app_flags_uu(int size, char *strn, t_print *ls);
 int						apply_w_p_uu(t_print *lst, char *strnum);
