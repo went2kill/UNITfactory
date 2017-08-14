@@ -93,7 +93,7 @@ int next_step_for_ss(t_print *list, va_list ptr)
     
     str = 0;
     str1 = 0;
-    if ((list->size == 's' && list->size == 2) || list->convers == 'S'){
+    if ((list->convers == 's' && list->size == 2) || list->convers == 'S'){
         str1 = va_arg(ptr, wchar_t*);
         str = make_norm_str(str1);
     }
