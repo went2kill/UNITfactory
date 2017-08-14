@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:43:22 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/14 17:34:27 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/14 17:41:33 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int			apply_w_p_ddi(t_print *lst, char *strnum, char lb)
 	}
 	else
 		str = strnum;
-	return (appy_w_p_ddi2(lst, strnum, lb, str));
+	return (apply_w_p_ddi2(lst, strnum, lb, str));
 }
 
 int			apply_w_p_ddi2(t_print *lst, char *strnum, char lb, char *str)
