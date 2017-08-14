@@ -6,7 +6,7 @@
 /*   By: yrobotko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 18:49:35 by yrobotko          #+#    #+#             */
-/*   Updated: 2017/08/14 16:33:06 by yrobotko         ###   ########.fr       */
+/*   Updated: 2017/08/14 16:37:28 by yrobotko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,14 @@ int			next_step_for_p(t_print *list, va_list ptr)
 	size_n = (int)ft_strlen(str);
 	if (list->width > size_n)
 		str = ft_strjoin(newstr(list->width - size_n, ' '), str);
-    next_step_for_p2(list, ptr, size_n, size2);
+    next_step_for_p2(list, ptr, str, size_n, size2);
 }
 
 int			next_step_for_p2(t_print *list, va_list ptr, char *str, int sn, int s2)
 {
     if (sn < list->width || sn < list->precision)
     {
-        s = 0;
+        s2 = 0;
         while (!ft_isdigit(str[s2]))
             s2++;
         str[--s2] = 'x';
